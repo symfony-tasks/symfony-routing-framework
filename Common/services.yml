@@ -1,0 +1,10 @@
+services:
+  response_factory:
+    class: SymfonyTasks\Routing\Common\Factory\ResponseFactory
+
+  controllers.basic:
+    class: SymfonyTasks\Routing\Common\BasicController
+    arguments:
+    - "@response_factory"
+    tags:
+    - { name: route, route: greet, path: '/hello/{term}', method: action }
